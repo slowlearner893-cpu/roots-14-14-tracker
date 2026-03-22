@@ -10,7 +10,7 @@ const milestones = [
       { label: "Product designed: 14/14 method, two-format strategy", owner: "Both", checked: true },
       { label: 'Positioning locked: "consistency creator" framing', owner: "Both", checked: true },
       { label: "Mentorship ladder mapped ($47 → $197 → $380 → $580/mo → $1,900/mo)", owner: "Both", checked: true },
-      { label: "Terms agreed: deferred $10K CAD build fee", owner: "Both", checked: true },
+      { label: "Terms agreed: deferred $10K USD build fee", owner: "Both", checked: true },
       { label: "Product brief written (v5)", owner: "Christopher", checked: true },
     ],
   },
@@ -41,9 +41,9 @@ const milestones = [
     phase: "Phase 4 – Post-Launch",
     done: false,
     items: [
-      { label: "Revenue milestone: $1,000 CAD", owner: "Both", checked: false },
-      { label: "Revenue milestone: $5,000 CAD", owner: "Both", checked: false },
-      { label: "Revenue milestone: $10,000 CAD (build fee triggered)", owner: "Both", checked: false },
+      { label: "Revenue milestone: $1,000 USD", owner: "Both", checked: false },
+      { label: "Revenue milestone: $5,000 USD", owner: "Both", checked: false },
+      { label: "Revenue milestone: $10,000 USD (build fee triggered)", owner: "Both", checked: false },
       { label: "Cohort v1 delivered", owner: "Rama", checked: false },
       { label: "Upsell to $380 roadmap activated", owner: "Both", checked: false },
     ],
@@ -107,8 +107,8 @@ export default function RootsTracker() {
     });
   };
 
-  const formatCAD = (val) =>
-    new Intl.NumberFormat("en-CA", { style: "currency", currency: "CAD", minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(val);
+  const formatUSD = (val) =>
+    new Intl.NumberFormat("en-CA", { style: "currency", currency: "USD", minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(val);
 
   return (
     <div className="min-h-screen bg-[#1a1a1a] text-stone-100 font-sans">
@@ -147,7 +147,7 @@ export default function RootsTracker() {
             </div>
             <div className="text-right">
               <div className="text-xs text-stone-500 uppercase tracking-wider mb-1">
-                Target: $10,000 CAD
+                Target: $10,000 USD
               </div>
               <div className="flex items-center gap-2">
                 <span className="text-stone-500 text-lg">$</span>
@@ -158,7 +158,7 @@ export default function RootsTracker() {
                   onChange={(e) => setRevenue(Math.max(0, Number(e.target.value)))}
                   className="bg-stone-900 border border-stone-700 rounded-lg px-3 py-2 text-2xl font-light text-stone-100 w-36 text-right focus:outline-none focus:border-amber-600 transition-colors"
                 />
-                <span className="text-stone-500 text-sm">CAD</span>
+                <span className="text-stone-500 text-sm">USD</span>
               </div>
             </div>
           </div>
@@ -171,7 +171,7 @@ export default function RootsTracker() {
             />
           </div>
           <div className="flex justify-between text-xs text-stone-500">
-            <span>{formatCAD(revenue)} earned</span>
+            <span>{formatUSD(revenue)} earned</span>
             <span>{progress.toFixed(1)}%</span>
           </div>
 
@@ -180,7 +180,7 @@ export default function RootsTracker() {
               <p className="text-2xl mb-1">🎉</p>
               <p className="text-amber-300 font-medium">Fee Triggered!</p>
               <p className="text-amber-400/70 text-sm mt-1">
-                Christopher's $10,000 CAD build fee is now payable.
+                Christopher's $10,000 USD build fee is now payable.
               </p>
             </div>
           )}
